@@ -1,0 +1,47 @@
+{
+  "name": "@wac/skyline-core",
+  "version": "1.5.3",
+  "description": "",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "@types/jest": "^24.0.6",
+    "@types/object-assign": "^4.0.30",
+    "@types/query-string": "^5.1.0",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "@wac/visual-suite": "^1.2.2",
+    "array-includes": "^3.0.3",
+    "es6-promise": "^4.2.6",
+    "load-script": "^1.0.0",
+    "md5": "^2.2.1",
+    "object-assign": "^4.1.1",
+    "query-string": "^5.1.1",
+    "sa-sdk-javascript": "^1.12.14",
+    "xhr": "^2.5.0"
+  }
+}

@@ -1,0 +1,1 @@
+## 基于 window.postMessage 的跨域通信方案

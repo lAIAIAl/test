@@ -1,0 +1,16 @@
+enable: true # 设置为 false 关闭所有 awesome-gitlab 特性
+plugins:
+  click_to_copy: true # 点击 issue/mr 引用自动复制
+  confirm_mr_merge:
+    enable: true # MR +n 要求默认关闭
+    branch: '**' # 只在合并到特定分支开启，默认所有，如：设置只在 master 开启
+    voteUpThreshold: 1 # MR +n 要求阈值
+    voteUpTip: '少年，MR +1 未满，合并你就摊上大事了！😎' # 不足 +n 提示
+    voteDownTip: '刁民，有 -1 的 MR 也想合？' # 存在 -1 提示
+  description_templates: true # 开启 issue/MR/milestone 模版
+  linkify_all: true # MR 页面分支链接
+  obelisk: true # obelisk 发布快捷链接
+  remove_source_branch: true # MR 合并时默认选中合并后移除源分支
+  preload_mr: true # MR 预先加载 commits & changes
+  toggle_comment: true # 展开 MR 评论全部对话
+  zen_mode_preview: true # markdown 编辑器 zen 模式开启快捷键

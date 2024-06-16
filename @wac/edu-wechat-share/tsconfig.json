@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "allowJs": false,
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es2015", "dom", "es5", "es2016",  "es2017"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "noEmit": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports":true,
+    "declaration": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "*.js"
+  ]
+}

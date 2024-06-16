@@ -1,0 +1,190 @@
+@popupPrefixCls: design-popup;
+.@{popupPrefixCls} {
+  z-index: 1051;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+
+  .close-image {
+    height: 1.5rem;
+  }
+
+  &-close {
+    display: none;
+  }
+
+  &-wrap {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    outline: 0;
+    background-color: white;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  &-tip {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    color: #F5794E;
+    background: #FFF5F5;
+  }
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #373737;
+    background-color: rgba(55, 55, 55, 0.6);
+    height: 100%;
+    filter: alpha(opacity=50);
+    z-index: 1050;
+    &-hidden {
+      display: none;
+    }
+  }
+
+  &-header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 3.5rem;
+    background-color: white;
+    &-left, &-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 1.7rem;
+      padding-right: 1.7rem;
+      font-size: 1.4rem;
+      color: #000000;
+    }
+    &-title {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #333333;
+      cursor: default;
+    }
+  }
+
+  &-inner-title {
+    font-size: 2rem;
+    color: #333333;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  &-content {
+    overflow: hidden;
+    background-color: white;
+    min-height: 20rem;
+  }
+
+  &-children {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .effect() {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+  }
+
+  &-fade-enter, &-fade-appear {
+    opacity: 0;
+    .effect();
+    animation-play-state: paused;
+  }
+
+  &-fade-leave {
+    .effect();
+    animation-play-state: paused;
+  }
+
+  &-fade-enter&-fade-enter-active, &-fade-appear&-fade-appear-active {
+    animation-name: popupPickerFadeIn;
+    animation-play-state: running;
+  }
+
+  &-fade-leave&-fade-leave-active {
+    animation-name: popupPickerFadeOut;
+    animation-play-state: running;
+  }
+
+  @keyframes popupPickerFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes popupPickerFadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &-slide-fade-enter,
+  &-slide-fade-appear {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  &-slide-fade-enter,
+  &-slide-fade-appear,
+  &-slide-fade-leave {
+    .effect();
+    animation-play-state: paused;
+  }
+
+  &-slide-fade-enter&-slide-fade-enter-active, &-slide-fade-appear&-slide-fade-appear-active {
+    animation-name: popupPickerSlideFadeIn;
+    animation-play-state: running;
+  }
+
+  &-slide-fade-leave&-slide-fade-leave-active {
+    animation-name: popupPickerSlideFadeOut;
+    animation-play-state: running;
+  }
+
+  @keyframes popupPickerSlideFadeIn {
+    0% {
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes popupPickerSlideFadeOut {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}

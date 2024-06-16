@@ -1,0 +1,55 @@
+/**
+ * @module 边框，必须在less中单独引入
+ * @description 为元素添加边框（包括1px边框）
+ * @method border
+ * @param {String} $border-width 指定边框厚度（单位为px），默认值：1px，取值与`border-width`属性一致，不同方向代表边框位置 比如只想设置底边，可设置为 0 0 1px 0
+ * @param {String} $border-color 指定边框颜色
+ * @param {String} $border-style 指定边框样式
+ * @param {String} $radius 指定边框圆角半径，默认值：null
+ */
+ .border(@border-width: 1px, @border-color: #e3e3e3, @border-style: solid, @border-radius: null) {
+  // 为边框位置提供定位参考
+  position: relative;
+  & when not (@border-radius = null){
+    border-radius: @border-radius;
+  }
+  &::after {
+    // 用以解决边框layer遮盖内容
+    pointer-events: none;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    // fix当元素宽度出现小数时，边框可能显示不全的问题
+    // overflow: hidden;
+    content: "\0020";
+    border-color: @border-color;
+    border-style: @border-style;
+    border-width: @border-width;
+    // 适配dpr进行缩放
+    @media (max--moz-device-pixel-ratio: 1.49),(-webkit-max-device-pixel-ratio: 1.49),(max-device-pixel-ratio: 1.49),(max-resolution: 143dpi),(max-resolution: 1.49dppx) {
+      width: 100%;
+      height: 100%;
+      & when not (@border-radius = null){
+        border-radius: @border-radius;
+      }
+    }
+    @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49),(-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49),(min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49),(min-resolution: 144dpi) and (max-resolution: 239dpi),(min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      & when not (@border-radius = null){
+        border-radius: @border-radius * 2;
+      }
+    }
+    @media (min--moz-device-pixel-ratio: 2.5),(-webkit-min-device-pixel-ratio: 2.5),(min-device-pixel-ratio: 2.5),(min-resolution: 240dpi),(min-resolution: 2.5dppx) {
+      width: 300%;
+      height: 300%;
+      transform: scale(0.3333);
+      & when not (@border-radius = null){
+        border-radius: @border-radius * 3;
+      }
+    }
+    transform-origin: 0 0;
+  }
+}

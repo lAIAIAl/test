@@ -1,0 +1,54 @@
+.m-pay-qrcode-wrapper {
+  position: absolute;
+  bottom: 5rem;
+  .m-get-qrcode {
+    width: 16.6rem;
+    height: 4.6rem;
+    background-image: image-set(
+      url(../../../images/icon-get-pay-qrcode@2x.png?base64) 1x,
+      url(../../../images/icon-get-pay-qrcode@3x.png?base64) 2x
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    margin-bottom: 1rem;
+  }
+
+  .m-pay-qrcode {
+    display: flex;
+    align-items: center;
+    width: 26rem;
+    height: 10rem;
+    background-color: #007aff;
+    border-radius: 0.4rem;
+    padding: 0 0.8rem;
+    color: #fff;
+    font-size: 1.2rem;
+    list-style: 1.6rem;
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+    .m-qrcode {
+      width: 8rem;
+      height: 8rem;
+      padding: 0.5rem;
+      margin-right: 0.8rem;
+      background-color: #fff;
+    }
+
+    .m-qrcode-tips {
+      .tip-title {
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      .tip-exp-time {
+        display: inline-block;
+        margin-top: 0.5rem;
+        padding: 0.2rem 0.8rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": ["@wac/standard", "prettier"],
+  "env": {
+    "jest": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 100,
+        "semi": false,
+        "singleQuote": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+.icon-mixin (@src, @extension, @retina) when (@retina = false) {
+  background-image: url('./images/@{src}.@{extension}?base64');
+}
+
+.icon-mixin (@src, @extension, @retina) when (@retina = true) {
+  background-image: url('./images/@{src}@2x.@{extension}?base64');
+  background-image: image-set(
+    url('./images/@{src}@2x.@{extension}?base64') 1x,
+    url('./images/@{src}@3x.@{extension}?base64') 2x
+  );
+}
+
+.mixin-icon-base() {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.design-icon {
+  .mixin-icon-base();
+
+  &-clear {
+    width: 1.6rem;
+    height: 1.6rem;
+    .icon-mixin('icon-clear', 'png', false);
+  }
+
+  &-checked {
+    width: 1.4rem;
+    height: 1.4rem;
+    .icon-mixin('icon-checked', 'png', true);
+  }
+
+  &-unchecked {
+    width: 1.4rem;
+    height: 1.4rem;
+    .icon-mixin('icon-unchecked', 'png', true);
+  }
+
+  &-back {
+    width: 1.1rem;
+    height: 1.8rem;
+    .icon-mixin('icon-back', 'png', false);
+  }
+
+  &-loading {
+    width: 2.2rem;
+    height: 2.1rem;
+    .icon-mixin('loading-white', 'png', true);
+    animation: rotate 1.3s infinite linear;
+  }
+
+  &-select {
+    width: 1.8rem;
+    height: 1.8rem;
+    .icon-mixin('icon-select', 'png', true);
+  }
+}

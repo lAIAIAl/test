@@ -1,0 +1,62 @@
+{
+  "name": "@wac/edu-wechat-share",
+  "version": "1.0.3",
+  "description": "财商的微信分享组件",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --format codeframe",
+    "build": "tsc && babel --config-file .babelrc --extensions .ts,.tsx,.js,.json src -d lib -D",
+    "precommit": "lint-staged",
+    "prepublishOnly": "rm -rf lib && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.caimi-inc.com:client/edu-wechat-share.git"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm run lint",
+      "git add"
+    ],
+    "*.{less,css}": [
+      "prettier --parser less --write",
+      "git add"
+    ]
+  },
+  "author": "xiacao@wacai.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.15",
+    "@babel/plugin-transform-async-to-generator": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/react": "^16.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.24.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-config-standard-react": "^11.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.23.2",
+    "husky": "^0.14.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^2.6.12",
+    "react": "^16.14.0",
+    "weixin-js-sdk": "^1.6.0"
+  }
+}

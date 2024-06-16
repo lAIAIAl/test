@@ -1,0 +1,48 @@
+{
+  "name": "@wac/messenger",
+  "version": "1.0.0",
+  "description": "基于 window.postMessage 的通信模块",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint --fix --format codeframe",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix --format codeframe",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.caimi-inc.com:kongtong/messenger.git"
+  },
+  "keywords": [
+    "postMessage"
+  ],
+  "author": "kongtong",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-angular": "^7.5.0",
+    "@types/jest": "^24.0.6",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "husky": "^2.2.0",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3"
+  }
+}

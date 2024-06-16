@@ -1,0 +1,27 @@
+{
+  "name": "@wac/zipkin-util",
+  "version": "1.1.0",
+  "description": "zipkin util",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "scripts": {
+    "lint": "eslint ./src --format codeframe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.caimi-inc.com:client/zipkin-util.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wac/eslint-config-standard": "^2.2.5",
+    "eslint": "^4.3.0"
+  },
+  "dependencies": {
+    "unique-string": "^2.0.0",
+    "zipkin": "^0.7.2",
+    "zipkin-context-cls": "^0.6.1"
+  }
+}

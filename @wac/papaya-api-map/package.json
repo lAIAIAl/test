@@ -1,0 +1,63 @@
+{
+  "name": "@wac/papaya-api-map",
+  "group": "com.wacai.client",
+  "version": "5.0.1",
+  "description": "papaya 路由映射",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "NODE_ENV=development jest --watchAll",
+    "lint": "eslint . --fix --format codeframe",
+    "lint-staged": "lint-staged",
+    "precommit": "NODE_ENV=development jest && lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.caimi-inc.com/client/papaya-api-map"
+  },
+  "author": {
+    "name": "yajiao",
+    "email": "yajiao@wacai.com"
+  },
+  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "notify": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "roots": [
+      "<rootDir>/__tests__"
+    ],
+    "modulePaths": [
+      "<rootDir>/src"
+    ],
+    "moduleDirectories": [
+      "<rootDir>/__mocks__",
+      "node_modules"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "text-summary"
+    ]
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix --format codeframe",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@wac/eslint-config-standard": "^2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.8.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "husky": "^0.13.3",
+    "jest-cli": "^20.0.0",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.8.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}

@@ -1,0 +1,60 @@
+.m-pay-type-wrap {
+  flex: 1;
+  background: #fff;
+
+  .type-item {
+    display: flex;
+    padding: 1.2rem 2rem;
+
+    // 图标
+    .item-icon {
+      color: #1d2129;
+      font-size: 1.4rem;
+      img {
+        width: 2.4rem;
+      }
+      span {
+        margin-left: 1.2rem;
+      }
+      .tips {
+        background: red;
+        padding: 1px 1rem;
+        border-radius: .7rem;
+        font-size: 1rem;
+        border-bottom-left-radius: 0;
+        color: #fff;
+        // position: relative;
+        // top: -15px;
+
+        &-alipay {
+          background: #02A9F1;
+        }
+      }
+    }
+
+    // 选择框
+    .item-select {
+      display: flex;
+      flex: 1;
+      text-align: right;
+      justify-content: flex-end;
+      align-items: center;
+
+      .img {
+        width: 2rem;
+        height: 2rem;
+
+        &.icon-select {
+          background: url("../../../images/icon_select.png") center center no-repeat;
+          background-size: 90% 90%;
+        }
+
+        &.icon-selected {
+          background: url("../../../images/icon_selected.png") center center
+            no-repeat;
+          background-size: 90% 90%;
+        }
+      }
+    }
+  }
+}

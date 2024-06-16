@@ -1,0 +1,71 @@
+@import "../../../design/styles/border.less";
+.m-pay-order-wrap {
+  display: flex;
+  flex-direction: column;
+
+  .m-price-wrap {
+    .border(0 0 1px 0);
+    margin: 0 1.6rem;
+
+    // 支付金额
+    .price-wrap {
+      display: flex;
+      background: #fff;
+      padding: 0.6rem 0 1rem;
+      align-items: center;
+
+      .price-desc {
+        font-size: 1.4rem;
+      }
+
+      .price {
+        flex: 1;
+        text-align: right;
+        font-size: 1.6rem;
+        font-weight: bold;
+
+        &-coupon {
+          color: #ff463c;
+        }
+      }
+
+      .name {
+        flex: 1;
+        text-align: right;
+        font-size: 1.5rem;
+        color: #333333;
+      }
+    }
+  }
+
+  // 支付方式
+  .pay-type-title {
+    color: #90949d;
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .m-pay-btn {
+    .border(1px 0 1px 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .pay-price {
+      padding-left: 2rem;
+    }
+    .price {
+      color: #ff463c;
+    }
+    .price-number {
+      font-size: 3rem;
+    }
+    // 立即支付
+    .btn-go-pay {
+      width: 37%;
+    }
+  }
+
+  .m-pay-submit-wrapper {
+    position: relative;
+  }
+}

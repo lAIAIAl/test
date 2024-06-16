@@ -1,0 +1,18 @@
+# Changelog
+## [1.6.0] - 2018-09-13
+### update
+-  change file stream for logrotate
+
+# Changelog
+## [1.5.2] - 2017-11-03
+### Bugfix
+-  测试环境日志 time undefined 报错
+
+# Changelog
+## [1.5.0] - 2017-11-03
+### Update
+-  测试环境日志输出到终端
+
+## [1.4.4] - 2017-08-01
+### Added
+-  支持自定义 err 字段

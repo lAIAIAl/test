@@ -1,0 +1,25 @@
+.radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 0;
+
+  .radio-icon {
+    margin-right: 0.4rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    
+    &.checked {
+      background: url('./images/checkbox-fill.png') center center no-repeat;
+      background-size: cover;
+    }
+    &.unchecked {
+      background: url('./images/checkbox-unfill.png') center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+}

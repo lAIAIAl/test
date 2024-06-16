@@ -1,0 +1,44 @@
+.design-navbar-wrap {
+  @height: 4.4rem;
+  margin-bottom: @height;
+  
+  .design-navbar {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: @height;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    background: #fff;
+
+    &-left {
+      width: 5rem;
+
+      .c-icon-back {
+        display: block;
+        height: @height;
+        background: url(./images/top_back.png) center center no-repeat;
+        background-size: 1.1rem 1.8rem;
+
+        &-light {
+          background: url(./images/back.png) 1.9rem center no-repeat;
+          background-size: 1.3rem 2rem;
+        }
+      }
+    }
+
+    &-title {
+      flex: 1;
+      font-size: 1.6rem;
+      color: #333;
+      text-align: center;
+    }
+
+    &-right {
+      min-width: 5rem;
+    }
+
+  }
+}

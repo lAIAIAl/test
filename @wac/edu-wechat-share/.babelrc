@@ -1,0 +1,36 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": [
+            "Android > 4.0",
+            "iOS > 6.0"
+          ]
+        },
+        "modules": "commonjs",
+        "corejs": 2,
+        "useBuiltIns": "usage"
+      }
+    ],
+    "@babel/react",
+    ["@babel/preset-typescript"]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    [
+      "@babel/transform-async-to-generator",
+      {
+        "module": "bluebird"
+      }
+    ]
+  ]
+}

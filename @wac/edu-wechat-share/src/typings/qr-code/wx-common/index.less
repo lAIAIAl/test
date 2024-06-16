@@ -1,0 +1,74 @@
+.m-qrcode-teacger-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .container {
+    .tip-container {
+      position: absolute;
+      bottom: 2vw;
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+
+      .tip-prefix {
+        color: #fff;
+        margin-right: 10px;
+      }
+    }
+    .background {
+      display: flex;
+      width: 100vw;
+      height: 203.125vw;
+      // margin-top: 4rem;
+      background: url("./images/background1104.png") no-repeat;
+      background-size: 100vw 203.125vw;
+      position: relative;
+      justify-content: center;
+    }
+
+    .img {
+      position: absolute;
+      bottom: 72vw;
+      align-self: center;
+      width: 50vw;
+    }
+  }
+}
+
+.m-qrcode-teacger-page-wechat {
+  .container {
+    .tip-container {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 62vw;
+      align-self: center;
+      .tip-prefix {
+        color: #666;
+      }
+
+      .online-service-entrance {
+        a {
+          color: #fc3a17;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // .online-service {
+    //   bottom: 5vw;
+    // }
+    .background {
+      height: 203.125vw;
+      // margin-top: 4rem;
+      background: url("./images/bg_wechat.png") no-repeat;
+      background-size: 100vw 203.125vw;
+    }
+    .img {
+      bottom: 70vw;
+      width: 52vw;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.design-form-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    position: relative;
+
+    .error {
+      position: absolute;
+      left: .1rem;
+      bottom: 0;
+      font-size: 1.1rem;
+      color: #FE7150;
+      display: flex;
+
+      &.text-align-right {
+        left: auto;
+        right: 3rem;
+        text-align: right;
+      }
+    }
+  }
+
+  label {
+    display: block;
+    padding-right: 1rem;
+    font-size: 1.4rem;
+    color: #8C8C8C;
+  }
+
+  &.column {
+    flex-direction: column;
+    align-items: stretch;
+
+    label {
+      font-size: 1.2rem;
+      color: #BABEC7;
+    }
+
+    input {
+      font-size: 2rem;
+      color: #333333;
+    }
+    .error {
+      left: 0;
+      bottom: -2.1rem;
+      font-size: 1.1rem;
+      color: #FE7150;
+      line-height: 1.4rem;
+    }
+  }
+}
